@@ -8,10 +8,11 @@ export default function Create() {
   const [method, setMethod] = useState('')
   const [cookingTime, setCookingTime] = useState('')
 
-  const handleSubmit = () => {
-
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(title, method, cookingTime)
   }
-  
+
   return (
     <div className="create">
       <h2 className="page-title">Add a New Recipe</h2>
@@ -25,6 +26,8 @@ export default function Create() {
             required
           />
         </label>
+
+        {/* ingredients go here */}
 
         <label>
           <span>Recipe Method:</span>
