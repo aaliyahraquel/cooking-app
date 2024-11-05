@@ -36,6 +36,32 @@
       ],
       "method": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse minima ex rem quis similique eum ratione quaerat, voluptas molestias ut repudiandae delectus voluptates. Eius esse at tenetur ab accusamus excepturi?",
       "cookingTime": "35 minutes"
+    },
+    {
+      "id": "366c",
+      "title": "Cottage pie",
+      "ingredients": [
+        "Potate",
+        "Potatoe",
+        "Mince",
+        "Thyme",
+        "Tomatoe sauce"
+      ],
+      "method": "Add the meat to the potatoe",
+      "cookingTime": "45 minutes"
+    },
+    {
+      "id": "deed",
+      "title": "Cottage pie",
+      "ingredients": [
+        "Potate",
+        "Potatoe",
+        "Mince",
+        "Thyme",
+        "Tomatoe sauce"
+      ],
+      "method": "Add the meat to the potatoe",
+      "cookingTime": "45 minutes"
     }
   ]
 }
