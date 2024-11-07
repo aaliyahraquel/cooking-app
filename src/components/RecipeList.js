@@ -1,8 +1,22 @@
 import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+
 //styles
 import './RecipeList.css'
 
 export default function RecipeList({ recipes }) {
+
+    const history = useHistory()
+
+    if (recipes.length === 0) {
+        return (
+            <>
+                <p className="page-title">There are no recipes to show...</p>
+                <button onClick={() => history.push('/')}>Back to Home</button>
+            </>
+        )
+    }
+
     return (
         <div className="recipe-list">
             {recipes.map(recipe => (

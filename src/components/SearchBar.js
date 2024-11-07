@@ -11,6 +11,7 @@ export default function SearchBar() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setTerm('')
 
         history.push(`/search?q=${term}`)
     }
@@ -22,6 +23,7 @@ export default function SearchBar() {
                     <input
                         type="text"
                         id="search"
+                        value={term}
                         onChange={(e) => setTerm(e.target.value)}
                         required
                     />
