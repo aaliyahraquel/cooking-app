@@ -7,6 +7,7 @@ export const useFetch = (url) => {
 
   useEffect(() => {
     const controller = new AbortController()
+    // AbortController allows you to abort one or more Web requests to prevent memory leaks and improves performance.
 
     const fetchData = async () => {
       setIsPending(true)

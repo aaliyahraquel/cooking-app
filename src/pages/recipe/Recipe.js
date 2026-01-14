@@ -6,7 +6,7 @@ import './Recipe.css'
 
 export default function Recipe({recipes}) {
   const { id } = useParams()
-  const url = 'http://localhost:3000/recipes/' + id
+  const url = 'http://localhost:3001/recipes/' + id
   const { data: recipe, isLoading, error} = useFetch(url)
   return (
     <div className="recipe">

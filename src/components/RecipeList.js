@@ -1,12 +1,11 @@
-import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 //styles
 import './RecipeList.css'
 
 export default function RecipeList({ recipes }) {
 
-    const history = useHistory()
+    const history = useNavigate()
 
     if (recipes.length === 0) {
         return (
