@@ -27,3 +27,10 @@
     text-align: left;
     line-height: 1.5em;
   }
+  .btn-delete {
+    background-color: #e74c3c;
+    margin-top: 20px;
+  }
+  .btn-delete:hover {
+    background-color: #c0392b;
+  }

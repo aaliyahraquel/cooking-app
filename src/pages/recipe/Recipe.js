@@ -7,6 +7,7 @@ import './Recipe.css'
 export default function Recipe({recipes}) {
   const { id } = useParams()
   const { data: recipe, isPending, error} = useFirestoreDocument('recipes', id)
+
   return (
     <div className="recipe">
       {error && <p className="error">{error}</p>}
