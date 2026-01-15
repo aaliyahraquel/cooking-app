@@ -3,7 +3,7 @@ import { useTheme } from '../hooks/useTheme'
 // styles 
 import './ThemeSelector.css'
 
-export default function () {
+export default function ThemeSelector() {
     const { changeColor } = useTheme()
     const themeColors = ['#58249c', '#249c6b', '#b70233']
     return (
