@@ -17,6 +17,7 @@ export default function Navbar() {
         </Link>
         <SearchBar />
         <Link to="/create">Create Recipe</Link>
+        <Link to="/favorites">♥ Favorites</Link>
       </nav>
     </div>
   )

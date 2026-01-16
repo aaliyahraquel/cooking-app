@@ -1,24 +1,33 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { doc, deleteDoc } from 'firebase/firestore'
 import { db } from '../firebase/config'
-import { MdDelete } from "react-icons/md";
+import { MdDelete } from "react-icons/md"
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"
+import { useFavorites } from '../hooks/useFavorites'
 
 //styles
 import './RecipeList.css'
 
 export default function RecipeList({ recipes }) {
     const navigate = useNavigate()
+    const { addFavorite, removeFavorite, isFavorite } = useFavorites()
     
     const handleDelete = async (recipeId) => {
       if (window.confirm('Are you sure you want to delete this recipe?')) {
         try {
-          console.log('Deleting recipe with ID:', recipeId)
           await deleteDoc(doc(db, 'recipes', recipeId))
           navigate('/')
-          console.log('Recipe deleted successfully')
         } catch (err) {
           console.log('Error deleting recipe:', err)
         }
+      }
+    }
+
+    const handleFavorite = (recipe) => {
+      if (isFavorite(recipe.id)) {
+        removeFavorite(recipe.id)
+      } else {
+        addFavorite(recipe)
       }
     }
 
@@ -38,8 +47,16 @@ export default function RecipeList({ recipes }) {
                     <p>{recipe.cookingTime} to make</p>
                     <div>{recipe.method.substring(0,100)}...</div>
                     <Link to={`/recipes/${recipe.id}`}>Cook this</Link>
-                    <div className="delete-icon">       
-                        <MdDelete onClick={() => handleDelete(recipe.id)}/>
+                    <div className="card-icons">
+                        <div className="heart-icon" onClick={() => handleFavorite(recipe)}>
+                            {isFavorite(recipe.id) ? 
+                                <AiFillHeart /> : 
+                                <AiOutlineHeart />
+                            }
+                        </div>
+                        <div className="delete-icon">       
+                            <MdDelete onClick={() => handleDelete(recipe.id)}/>
+                        </div>
                     </div>
 
                 </div>

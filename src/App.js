@@ -6,6 +6,7 @@ import Home from './pages/home/Home'
 import Create from './pages/create/Create'
 import Search from './pages/search/Search'
 import Recipe from './pages/recipe/Recipe'
+import Favorites from './pages/favorites/Favorites'
 import ThemeSelector from './components/ThemeSelector'
 
 // styles
@@ -22,6 +23,7 @@ function App() {
           <Route path="/create" element={<Create />} />
           <Route path="/search" element={<Search />} />
           <Route path="/recipes/:id" element={<Recipe />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </BrowserRouter>
     </div>

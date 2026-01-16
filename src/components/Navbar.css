@@ -14,15 +14,25 @@
   color: #fff;
   text-decoration: none;
 }
-.navbar a:last-child {
+.navbar a {
   color: #fff;
   text-decoration: none;
   margin-left: 40px;
-  padding: 8px;
+  padding: 8px 12px;
   border: 1px solid #fff;
   border-radius: 4px;
+  transition: all 0.3s ease;
 }
-.navbar a:last-child:hover {
+.navbar a:not(.brand) {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 40px;
+  padding: 8px 12px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.navbar a:not(.brand):hover {
   background: #fff;
   color: #333;
 }
